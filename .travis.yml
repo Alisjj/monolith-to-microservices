@@ -9,6 +9,9 @@ install:
   - echo "Nothing for now"
 
 before_script:
+  - echo "no tests"
+
+script:
   - docker --version
   - docker build -t udagram-api-feed ./udagram-api-feed
   - docker build -t udagram-api-user ./udagram-api-user
