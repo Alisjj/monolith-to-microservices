@@ -1,27 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: udagram-feed
+  name: udagram-user
   labels:
-    app: udagram-feed
+    app: udagram-user
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: udagram-feed
+      app: udagram-user
   template:
     metadata:
       labels:
-        app: udagram-feed
+        app: udagram-user
     spec:
       containers:
-      - name: udagram-api-feed
-        image: alsajjad/udagram-api-feed:v1
+      - name: udagram-api-user
+        image: alsajjad/udagram-api-user:v1
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
 
-        # Add the environment variables
+        # Add environment variables to the container
         env:
         - name: URL
           valueFrom:
